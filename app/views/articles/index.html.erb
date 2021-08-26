@@ -1,0 +1,19 @@
+<h3>Listando todos los articulos</h3>
+ 
+<table border="1">
+    <tr>
+        <th>ID</th>  
+        <th>Title</th>
+        <th>Text</th>
+        <th>Action</th>
+    </tr>
+ 
+    <% @articles.each do |article| %>
+    <tr>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= link_to 'Show', article %></td>
+    </tr>
+    <% end %>
+</table>
