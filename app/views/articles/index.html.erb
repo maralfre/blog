@@ -7,6 +7,7 @@
         <th>Title</th>
         <th>Text</th>
         <th>Action</th>
+        <th colspan="2">Edit</th>
     </tr>
  
     <% @articles.each do |article| %>
@@ -15,9 +16,9 @@
         <td><%= article.title %></td>
         <td><%= article.text %></td>
         <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Editar', edit_article_path(article) %></td>
     </tr>
     <% end %>
 </table>
 <br>
 <%= link_to 'Click aquí para crear un nuevo artículo', new_article_path %>
-
