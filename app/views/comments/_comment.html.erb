@@ -1,0 +1,11 @@
+<% @article.comments.each do |comment| %>
+    <p>
+      <strong>Título:</strong>
+      <%= comment.commenter %>
+    </p>
+   
+    <p>
+      <strong>Texto:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
