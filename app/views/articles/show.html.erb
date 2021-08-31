@@ -1,24 +1,45 @@
-<h3>
+<h2>
     Detalle del articulo
-</h3> 
+</h2> 
 
 <p>
-  <strong>Title:</strong>
-</p> 
-
-<p>
+  <strong>Titulo:</strong>
   <%= @article.title %>
 </p>
  
 <p>
-  <strong>Text:</strong>
-</p>
-
-<p>
+  <strong>Texto:</strong>
   <%= @article.text %>
 </p>
 
-<%= link_to 'Editar', edit_article_path(@article) %>
+<h2>Ver Comentarios</h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
 
+<h2>Agregar un comentario:</h2>
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Editar', edit_article_path(@article) %>
 <%= link_to 'Regresar al listado de artículos', articles_path %>
 
