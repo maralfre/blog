@@ -8,4 +8,10 @@
       <strong>Texto:</strong>
       <%= comment.body %>
     </p>
+
+    <p>
+      <%= link_to 'Borrar comentario', [comment.article, comment],
+                 method: :delete,
+                 data: { confirm: '¿Está ud. seguro?' } %>
+    </p>
   <% end %>
