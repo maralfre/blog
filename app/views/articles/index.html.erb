@@ -1,26 +1,31 @@
 <br>
-<h3>Listando todos los artículos</h3>
- 
-<table border="1">
-    <tr>
-        <th>ID</th>  
-        <th>Title</th>
-        <th>Text</th>
-        <th colspan="3">Action</th>
+<%= image_tag('teclado_mouse_otros.jpg', widht: '300px', height: '300px') %>
+<br>
+<h2 class="text-primary">Listando todos los artículos</h2>
+<br>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr align="center">
+      <th scope="col">N°</th>
+      <th scope="col">Título</th>
+      <th scope="col">Texto</th>
+      <th colspan="3">Acción</th>
     </tr>
- 
-    <% @articles.each do |article| %>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
     <tr>
         <td><%= article.id %></td>
         <td><%= article.title %></td>
         <td><%= article.text %></td>
-        <td><%= link_to 'Mostrar', article %></td>
-        <td><%= link_to 'Editar', edit_article_path(article) %></td>
-        <td><%= link_to 'Eliminar', article_path(article),
+        <td align="center"><%= link_to 'Mostrar', article %></td>
+        <td align="center"><%= link_to 'Editar', edit_article_path(article) %></td>
+        <td align="center"><%= link_to 'Eliminar', article_path(article),
               method: :delete,
               data: { confirm: '¿Está seguro?' } %></td>
     </tr>
     <% end %>
+  </tbody>
 </table>
-<br>
-<%= link_to 'Click aquí para crear un nuevo artículo', new_article_path %>
+<%= link_to 'Crea un nuevo artículo', new_article_path, class: 'btn btn-primary' %>

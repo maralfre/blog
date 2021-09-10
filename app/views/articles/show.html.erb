@@ -1,23 +1,25 @@
-<h2>
-    Detalle del artículo
-</h2> 
+<%= image_tag('escribir_articulo.jpg', widht: '300px', height: '300px') %>  
+<br>
+<h2><u>Detalle del artículo</u></h2> 
 
-<p class="titulo">
-  <strong id="resaltado">Título:</strong>
-  <%= @article.title %>
+<p>
+  <strong>Título:</strong>
+  <em><%= @article.title %></em>
 </p>
  
-<p class="titulo">
-  <strong id="resaltado">Texto:</strong>
-  <%= @article.text %>
+<p>
+  <strong>Texto:</strong>
+  <em><%= @article.text %></em>
 </p>
 
-<h2>Ver Comentarios</h2>
-<%= render @article.comments %>
+<br>
+<h3><u>Comentarios</u></h3>
+<em><%= render @article.comments %></em>
 
-<h2>Agregar un comentario:</h2>
+<br>
+<h2><u>Agregar un comentario:</u></h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Editar', edit_article_path(@article) %>
-<%= link_to 'Regresar al listado de artículos', articles_path %>
+<%= link_to 'Editar', edit_article_path(@article), class: 'btn btn-link' %>
+<%= link_to 'Regresar al listado de artículos', articles_path, class: 'btn btn-link' %>
 
