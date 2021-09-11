@@ -14,18 +14,28 @@
       </div>
     <% end %>
    
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Título</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+
     <p>
       <%= form.label :Título %><br>
       <%= form.text_field :title %>
     </p>
-   
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Texto</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
     <p>
       <%= form.label :Texto %><br>
       <%= form.text_area :text %>
     </p>
    
     <p>
-      <%= form.submit 'Actualizar Comentario', class: 'btn btn-primary' %>
+      <%= form.submit 'Crear este artículo', class: 'btn btn-primary' %>
     </p>
    
   <% end %>
