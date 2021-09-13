@@ -1,31 +1,19 @@
-<br>
-<%= image_tag('teclado_mouse_otros.jpg', widht: '300px', height: '300px') %>
-<br>
-<h2 class="text-primary">Listando todos los artículos</h2>
-<br>
-
-<table class="table table-bordered">
-    <thead class="table-dark">
-    <tr align="center">
-      <th scope="col">N°</th>
-      <th scope="col">Título</th>
-      <th scope="col">Texto</th>
-      <th colspan="3">Acción</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @articles.each do |article| %>
-    <tr>
-        <td><%= article.id %></td>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td align="center"><%= link_to 'Mostrar', article %></td>
-        <td align="center"><%= link_to 'Editar', edit_article_path(article) %></td>
-        <td align="center"><%= link_to 'Eliminar', article_path(article),
-              method: :delete,
-              data: { confirm: '¿Está seguro?' } %></td>
-    </tr>
+<h3 class="text-center">Artículos Publicados</h3>
+<% @articles.each_slice(3).to_a.each do |article_group| %>
+  <div class="row">
+    <% article_group.each do |article| %>
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag('teclado_mouse_otros.jpg', class: 'card-img-top') %>
+          <div class="card-body">
+            <h5 class="card-title"><u><%= article.title %></u></h5>
+            <p class="card-text"><em><%= article.text %></em></p>
+            <%= link_to 'Detalle', article, class: 'btn btn-outline-primary' %>
+            <%= link_to 'Editar', edit_article_path(article), class: 'btn btn-outline-primary' %>
+            <%= link_to 'Eliminar', article_path(article), method: :delete, data: {confirm: '¿Estás seguro?'}, class: 'btn btn-outline-primary' %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= link_to 'Crea un nuevo artículo', new_article_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>
