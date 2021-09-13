@@ -26,7 +26,7 @@
 
 <div class="mb-3">
   <%= form.label :photo, "Imagen", class: 'form-label' %>
-  <%= form.file_field :photo, class: 'form-control' %>
+  <%= form.file_field :photo, direct_upload: true, class: 'form-control' %>
 </div>
 
     <p>

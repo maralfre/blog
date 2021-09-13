@@ -3,7 +3,7 @@
 <h2><u>Detalle del artículo</u></h2> 
 
 <% if @article.photo.attached? %>
-  <%= image_tag(url_for(@article.photo), width: 300, height: 300) %>
+  <%= cl_image_tag(url_for(@article.photo), width: 300, height: 300) %>
 <% end %>
 
 <p>
