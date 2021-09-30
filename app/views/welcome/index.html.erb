@@ -1,7 +1,13 @@
 <br>
  <%= image_tag('codigos_programacion.jpg', widht: '200px', height: '200px') %> 
 <br>
-<h1><em>¡Hola Mundo!, ¡bienvenidos a mi primera web!</em></h1>
+<h1><em>¡Hola!</em></h1>
+<h1><em><%= current_user.email %></em></h1>
+<h1><em>¡bienvenid@ a mi primera web!</em></h1>
 <h3><em>¡Mira como esta quedando mi blog!</em></h3>
 <%= image_tag('bienvenida.jpg', widht: '400px', height: '400px') %> 
 <h4><%= link_to 'Ir al Blog ==>', controller: 'articles' %></h4>
+
+<h3><em>¿Deseas cerrar tu sesión? has:</em></h3>
+<h3><em><%= link_to 'Log out', destroy_user_session_path, method: :delete,
+data: {confirm: '¿Seguro quieres salir?'} %></h3>
