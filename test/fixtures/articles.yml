@@ -1,9 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  text: MyText
-
-two:
-  title: MyString
-  text: MyText
+valid:
+  title: Test Article title
+  text: this is the text of the article
